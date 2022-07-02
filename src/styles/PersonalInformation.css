@@ -1,0 +1,24 @@
+.personal-information__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  position: relative;
+}
+
+.personal-information__contact {
+  display: flex;
+  justify-content: space-around;
+}
+
+.personal-information__btn-info {
+  margin: 0.5rem;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.personal-information__container:hover .personal-information__btn-info {
+  display: block;
+  background-color: gold;
+}

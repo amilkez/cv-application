@@ -1,0 +1,22 @@
+@import-normalize;
+@import './Resume.css';
+@import './PersonalInformation.css';
+@import './ResumeEdit.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  font-weight: bold;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
