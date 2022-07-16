@@ -1,4 +1,6 @@
 .personal-information__container {
+  grid-column: span 2;
+  text-align: center;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
