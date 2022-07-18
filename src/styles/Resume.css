@@ -1,5 +1,6 @@
 .resume-grid {
   width: 50%;
+  padding: 2rem;
   display: grid;
   border-right: 1px solid black;
   min-height: 100vh;

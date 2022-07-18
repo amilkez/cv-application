@@ -8,11 +8,21 @@ function EducationItem(props) {
 
   return (
     <div className="education-item">
-      <button onClick={() => handleEducationDelete(id)}>&times;</button>
-      <h3>{title}</h3>
-      <p>{school}</p>
-      <p>{endDate}</p>
-      <button onClick={() => handleEducationSelect(id)}>Edit Education</button>
+      <button
+        onClick={() => handleEducationDelete(id)}
+        className="item__btn-remove item__btn"
+      >
+        &times;
+      </button>
+      <h3 className="item__header-3">{title}</h3>
+      <p className="item__para">{school}</p>
+      <p className="item__para">{endDate}</p>
+      <button
+        onClick={() => handleEducationSelect(id)}
+        className="item__btn-edit item__btn"
+      >
+        Edit Education
+      </button>
     </div>
   );
 }

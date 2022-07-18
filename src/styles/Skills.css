@@ -1,0 +1,34 @@
+.skills-list {
+  margin: 0 1rem;
+  position: relative;
+  height: 50%;
+}
+
+.skill-item {
+  margin: 0 1rem;
+}
+
+.skill.item__btn-container {
+  justify-self: end;
+}
+
+.skill-item .item__btn-remove {
+  display: none;
+}
+
+.skill-item .item__btn-edit {
+  display: none;
+}
+
+.skillitem .skills-list:hover .item__btn-container {
+  display: inline-block;
+  background-color: gold;
+}
+
+.skill-item:hover .item__btn-remove {
+  display: inline-block;
+}
+
+.skill-item:hover .item__btn-edit {
+  display: inline-block;
+}

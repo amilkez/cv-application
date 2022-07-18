@@ -1,0 +1,20 @@
+.education-list {
+  grid-row: span 2;
+  position: relative;
+  background-color: #eeeef0;
+}
+
+.education-item {
+  display: grid;
+  margin: 1rem;
+}
+
+.education-header,
+.work-header,
+.skills-header {
+  margin: 1rem;
+  font-size: 1.7rem;
+  padding: 1rem 0;
+  border-top: 2px solid #242d3e;
+  border-bottom: 2px solid #242d3e;
+}

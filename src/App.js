@@ -5,6 +5,7 @@ import ResumeEdit from './components/ResumeEdit';
 import { v4 as uuid } from 'uuid';
 import EducationEdit from './components/EducationEdit';
 import WorkEdit from './components/WorkEdit';
+import SkillEdit from './components/SkillEdit';
 
 const ResumeContext = React.createContext();
 
@@ -18,6 +19,9 @@ function App() {
   const [worksList, setWorksList] = useState(sampleWorks);
   const [selectedWorkId, setSelectedWorkId] = useState();
 
+  const [skillsList, setSkillsList] = useState(sampleSkills);
+  const [selectedSkillId, setSelectedSkillId] = useState();
+
   const handleResumeEdit = (state) => {
     setDisplayEdit(state);
   };
@@ -29,6 +33,39 @@ function App() {
   const selectedWorkItem = worksList.find(
     (workItem) => workItem.id === selectedWorkId,
   );
+
+  const selectedSkillItem = skillsList.find(
+    (skillItem) => skillItem.id === selectedSkillId,
+  );
+
+  const handleSkillAdd = () => {
+    const newSkill = {
+      id: uuid(),
+      skill: '',
+    };
+    setSelectedSkillId(newSkill.id);
+    setSkillsList([...skillsList, newSkill]);
+  };
+
+  const handleSkillDelete = (id) => {
+    if (selectedSkillId != null && selectedSkillId === id) {
+      setSelectedSkillId(undefined);
+    }
+    setSkillsList(skillsList.filter((skill) => skill.id !== id));
+  };
+
+  const handleSkillChange = (id, item) => {
+    const newSkillItems = [...skillsList];
+    const index = newSkillItems.findIndex((skill) => skill.id === id);
+    newSkillItems[index] = item;
+    setSkillsList(newSkillItems);
+  };
+
+  const handleSkillSelect = (id) => {
+    setSelectedSkillId(id);
+  };
+
+  /********************** */
 
   const handleWorkAdd = () => {
     const newWork = {
@@ -101,6 +138,10 @@ function App() {
     handleWorkDelete,
     handleWorkSelect,
     handleWorkChange,
+    handleSkillAdd,
+    handleSkillDelete,
+    handleSkillSelect,
+    handleSkillChange,
   };
 
   return (
@@ -112,6 +153,7 @@ function App() {
           educationList={educationList}
           setEducationList={setEducationList}
           worksList={worksList}
+          skillsList={skillsList}
         />
         {displayEdit || (
           <ResumeEdit
@@ -124,6 +166,7 @@ function App() {
           <EducationEdit education={selectedEducationItem} />
         )}
         {selectedWorkItem && <WorkEdit work={selectedWorkItem} />}
+        {selectedSkillItem && <SkillEdit skill={selectedSkillItem} />}
       </>
     </ResumeContext.Provider>
   );
@@ -144,6 +187,11 @@ const sampleEducation = [
 const sampleWorks = [
   { position: '', company: '', endDate: '', description: '', id: uuid() },
   { position: '', company: '', endDate: '', description: '', id: uuid() },
+];
+
+const sampleSkills = [
+  { skill: '', id: uuid() },
+  { skill: '', id: uuid() },
 ];
 
 export default App;

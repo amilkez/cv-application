@@ -1,0 +1,13 @@
+.work-exp {
+  margin: 0 1rem;
+  position: relative;
+  height: 50%;
+}
+
+.work-item {
+  margin: 0 1rem;
+}
+
+.work-exp.item__btn-container {
+  justify-self: end;
+}

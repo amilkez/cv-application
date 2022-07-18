@@ -6,12 +6,13 @@ function WorksList({ worksList }) {
   const { handleWorkAdd } = useContext(ResumeContext);
   return (
     <div className="work-exp">
+      <h2 className="work-header">Work Experience</h2>
       <div>
         {worksList.map((work) => {
           return <WorkExpItem key={work.id} {...work} />;
         })}
       </div>
-      <div className="work-exp education-btn-container">
+      <div className="item__btn-container">
         <button className="btn btn--primary" onClick={handleWorkAdd}>
           Add Work
         </button>

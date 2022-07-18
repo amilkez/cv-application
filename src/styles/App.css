@@ -2,6 +2,11 @@
 @import './Resume.css';
 @import './PersonalInformation.css';
 @import './ResumeEdit.css';
+@import './Education.css';
+@import './Work.css';
+@import './Skills.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap');
 
 *,
 *::before,
@@ -9,6 +14,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
 }
 
 .btn {
@@ -19,4 +28,73 @@
   padding: 1rem 2rem;
   cursor: pointer;
   border-radius: 10px;
+}
+
+.btn.btn--primary {
+  border-radius: 10px;
+}
+
+.item__btn {
+  background-color: gold;
+  border: none;
+  cursor: pointer;
+}
+
+.item__btn.item__btn-remove {
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.item__btn-remove {
+  border-radius: 5px;
+  opacity: 0;
+  justify-self: end;
+  margin-right: 0.5rem;
+  padding: 0.2rem;
+}
+
+.item__header-3 {
+  font-size: 1.2rem;
+  margin: 0.2rem 0;
+}
+
+.item__para {
+  margin: 0.2rem 0;
+}
+
+.item__btn-edit {
+  opacity: 0;
+  font-weight: bold;
+  justify-self: end;
+  margin-right: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+}
+
+.item__btn-container {
+  margin: 1rem 0;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0.5rem;
+  border-radius: 10px;
+}
+
+.education-list:hover .item__btn-container,
+.work-exp:hover .item__btn-container,
+.skills-list:hover .item__btn-container {
+  display: inline-block;
+  background-color: gold;
+}
+
+.education-item:hover .item__btn-remove,
+.work-item:hover .item__btn-remove,
+.skill-item:hover .item__btn-remove {
+  opacity: 1;
+}
+
+.education-item:hover .item__btn-edit,
+.work-item:hover .item__btn-edit,
+.skill-item:hover .item__btn-edit {
+  opacity: 1;
 }
